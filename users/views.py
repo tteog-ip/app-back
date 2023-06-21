@@ -1,12 +1,11 @@
 import json, bcrypt, jwt
+import os
 
 from django.views           import View
 from django.http            import JsonResponse
 from django.core.exceptions import ValidationError
-
 from .models                import User
 from core.validators        import email_validate, password_validate
-from my_settings            import SECRET_KEY, ALGORITHM
 
 
 class SignupView(View):
@@ -44,7 +43,7 @@ class SigninView(View):
             if not bcrypt.checkpw(data['password'].encode('utf-8'), user.password.encode('utf-8')):
                 return JsonResponse({'message' : 'INVALID_USER'}, status=401)
 
-            token=jwt.encode({'user':user.id},SECRET_KEY,algorithm=ALGORITHM)
+            token=jwt.encode({'user':user.id},os.environ['SECRET_KEY'],algorithm=os.environ['ALGORITHM'])
 
             return JsonResponse({
                 'message' : 'SUCCESS',
