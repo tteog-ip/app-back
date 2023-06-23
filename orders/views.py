@@ -13,7 +13,6 @@ from users.models    import User
 from products.models import Apt
 from orders.models   import Application, AppStatus
 from core.utils      import authorization
-from my_settings import AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY
 
 class ApplicationListView(View):
     @authorization
