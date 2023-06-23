@@ -4,7 +4,6 @@ from django.http      import JsonResponse
 from django.views     import View
 from django.db.models import Sum, Q
 from core.utils import AuthorizeProduct, authorization
-from my_settings import AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY
 
 from products.models  import Apt
 
