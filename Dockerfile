@@ -9,4 +9,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install gunicorn
 COPY . /appback
-CMD sleep 5 && python manage.py makemigrations && python manage.py migrate && gunicorn config.wsgi --bind 0.0.0.0:8000
+CMD sleep 5 && python manage.py makemigrations && python manage.py migrate && gunicorn dr_tart.wsgi --bind 0.0.0.0:8000
