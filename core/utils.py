@@ -1,9 +1,10 @@
+import os
+
 import jwt
 
 from django.http import JsonResponse
 
 from users.models import User
-from my_settings  import SECRET_KEY, ALGORITHM
 
 def authorization(func):
     def wrapper(self, request, *args, **kwargs):
@@ -13,7 +14,7 @@ def authorization(func):
             if not token:
                 return JsonResponse({'message' : 'TOKEN_REQUIRED'}, status=401)
 
-            payload      = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+            payload      = jwt.decode(token, os.environ['SECRET_KEY'], algorithms=os.environ['ALGORITHM'])
 
             user         = User.objects.get(id=payload['user'])
             request.user = user
