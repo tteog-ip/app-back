@@ -1,6 +1,7 @@
 FROM python:3.9
 ENV PYTHONUNBUFFERED 1
-WORKDIR /appback
+RUN git clone https://github.com/tteog-ip/app-back
+WORKDIR /app-back
 COPY requirements.txt /appback/requirements.txt
 ENV VIRTUAL_ENV=/venv
 RUN python3.9 -m venv $VIRTUAL_ENV
