@@ -144,6 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ORIGIN_WHITELIST = (
+    'http://a93a416b9e4dc4ac98eea06360727e2a-696978128.ap-northeast-2.elb.amazonaws.com',
+    'httpL//a03f0bd382479495f986d6bd4e9c337a-1831276977.ap-northeast-2.elb.amazonaws.com',
+    'http://home.tteogip.com',
+)
+
 CORS_ALLOW_METHODS = (
     'DELETE',
     'GET',
@@ -163,6 +169,7 @@ CORS_ALLOW_HEADERS = (
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+    'custom-header',
 )
 
 APPEND_SLASH     = False
