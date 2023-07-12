@@ -145,10 +145,12 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_WHITELIST = (
-    'http://a93a416b9e4dc4ac98eea06360727e2a-696978128.ap-northeast-2.elb.amazonaws.com',
     'http://a03f0bd382479495f986d6bd4e9c337a-1831276977.ap-northeast-2.elb.amazonaws.com',
     'https://a03f0bd382479495f986d6bd4e9c337a-1831276977.ap-northeast-2.elb.amazonaws.com',
+    'http://a0cb4af7517ab4422817325fb2bc24f8-374652145.ap-northeast-2.elb.amazonaws.com',
+    'https://a0cb4af7517ab4422817325fb2bc24f8-374652145.ap-northeast-2.elb.amazonaws.com',
     'http://home.tteogip.com',
+    'https://home.tteogip.com',
 )
 
 CORS_ALLOW_METHODS = (
